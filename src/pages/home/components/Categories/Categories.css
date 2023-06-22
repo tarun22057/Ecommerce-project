@@ -1,0 +1,12 @@
+.categories-conatiner {
+  width: 100%;
+  display: flex;
+  gap: 0.2em;
+}
+.category-text {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 146px;
+  padding: 1em 0em;
+}
