@@ -1,13 +1,13 @@
 import React from "react";
-import { Logo } from "./components/Logo";
+import { Logos } from "./components/Logos";
 import { SearchBar } from "./components/SearchBar";
-import { Right } from "./components/Right";
+import { Right } from "./components/Right/Right";
 import "./Header.css";
 
 export const Header = () => {
   return (
-    <div>
-      <Logo />
+    <div className="nav-bar">
+      <Logos />
       <SearchBar />
       <Right />
     </div>

@@ -1,0 +1,16 @@
+.right-style {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.hover-style:hover {
+  color: rgb(163, 156, 156);
+  cursor: pointer;
+}
+span {
+  letter-spacing: 0.3px;
+  font-weight: 400;
+}
+.font-style {
+  font-size: 54px;
+}
