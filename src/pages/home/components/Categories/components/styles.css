@@ -1,0 +1,11 @@
+.img-comatiner {
+  height: 500px;
+  width: 33.5%;
+}
+.img-comatiner img {
+  width: 100%;
+  border-radius: 20px;
+}
+.img-conatiner img:hover{
+    
+}
