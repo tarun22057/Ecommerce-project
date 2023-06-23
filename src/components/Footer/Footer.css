@@ -1,0 +1,23 @@
+.footer-content {
+  margin-top: 4em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  background-color: black;
+  padding: 5em;
+}
+
+.footer-links a {
+  margin-right: 10px;
+  color: #777;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-copyright {
+  color: #777;
+}

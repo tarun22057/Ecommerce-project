@@ -1,10 +1,16 @@
 import React from "react";
 import ReactPlayer from "react-player";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./VideoElement.css";
 import videoFile from "./Assets/herosection-video.mp4";
 
 export const VideoElement = () => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/Products");
+  };
+
   return (
     <div className="hero-video-container">
       <div className="hero-video">
@@ -28,10 +34,7 @@ export const VideoElement = () => {
         </h2>
       </div>
 
-      <button
-        // onClick={() => Navigate("product-listing")}
-        className="shop-now-btn"
-      >
+      <button onClick={handleButtonClick} className="shop-now-btn">
         Shop Now
       </button>
     </div>

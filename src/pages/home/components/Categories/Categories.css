@@ -1,7 +1,8 @@
 .categories-conatiner {
   width: 100%;
   display: flex;
-  gap: 0.2em;
+  gap: 0.4em;
+  justify-content: center;
 }
 .category-text {
   text-align: center;
