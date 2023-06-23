@@ -5,13 +5,6 @@ import { Home } from "./pages/home/Home";
 import { Header } from "./components/Header/Header";
 
 function App() {
-  //   <video
-  //   src="/assets/videos/video-3.mp4"
-  //   preload="auto"
-  //   autoplay=""
-  //   loop=""
-  //   style="width: 100%; height: 100%;"
-  // ></video>;
   return (
     <BrowserRouter>
       <Header />
