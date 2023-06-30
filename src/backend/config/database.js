@@ -8,7 +8,7 @@ const connectDataBase = () => {
       useUnifiedTopology: true,
     })
     .then((data) => {
-      console.log(`CONNECTED TO DATA BASE ${data.connection.host}`);
+      console.log(`CONNECTED TO DATA BASE ${data.connection.name}`);
     })
     .catch((err) => {
       console.log(err);
