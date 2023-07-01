@@ -10,6 +10,15 @@ const PORT = process.env.PORT;
 const connectDataBase = require("./config/database");
 connectDataBase();
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`SERVER LISTENING AT PORT ${PORT}`);
+});
+
+//unhandled promise rejection
+process.on("unhandledRejection", (err) => {
+  console.log(`ERROR : ${err}`);
+  console.log("SERVER SHUTTING DOWN...");
+  server.close(() => {
+    process.exit(1);
+  });
 });

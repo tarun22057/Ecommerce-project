@@ -66,10 +66,48 @@ const getProductsByPrice = async (req, res, next) => {
   }
 };
 
+//search products multiple fields
+const search = async (req, res, next) => {
+  try {
+    let keyword = req.query.key;
+    let minPrice = parseFloat(req.query.minPrice);
+    let maxPrice = parseFloat(req.query.maxPrice);
+
+    const query = {};
+
+    // Add keyword search condition
+    if (keyword) {
+      const keywords = keyword.split(" ");
+      const keywordRegex = keywords.map((kw) => new RegExp(kw, "i"));
+      query.$or = [
+        { name: { $in: keywordRegex } },
+        { brand: { $in: keywordRegex } },
+        { category: { $in: keywordRegex } },
+      ];
+    }
+
+    // Add price range condition
+    if (!isNaN(minPrice) && !isNaN(maxPrice)) {
+      query.price = { $gte: minPrice, $lte: maxPrice };
+    } else if (!isNaN(minPrice)) {
+      query.price = { $gte: minPrice };
+    } else if (!isNaN(maxPrice)) {
+      query.price = { $lte: maxPrice };
+    }
+
+    const products = await Product.find(query);
+
+    res.status(200).json({ success: true, products });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getAllProducts,
   getProductsByGender,
   getProductsByBrand,
   getProductsByCategory,
   getProductsByPrice,
+  search,
 };

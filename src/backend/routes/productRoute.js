@@ -5,6 +5,7 @@ const {
   getProductsByBrand,
   getProductsByCategory,
   getProductsByPrice,
+  search,
 } = require("../controllers/productController");
 const router = express.Router();
 
@@ -14,6 +15,7 @@ router.get("/products/gender/:gender", getProductsByGender); // get products by 
 router.get("/products/brand/:brand", getProductsByBrand); // get products by brand
 router.get("/products/category/:category", getProductsByCategory); // get products by category
 router.get("/products/price", getProductsByPrice); // get products by price
+router.get("/products/search/", search); // search functionality
 
 //ADMIN ROUTES
 module.exports = router;
