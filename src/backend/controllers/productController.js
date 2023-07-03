@@ -75,8 +75,11 @@ const search = async (req, res, next) => {
 
     const query = {};
 
-    // Add keyword search condition
-    if (keyword) {
+    // Check if the keyword is numeric (e.g., "100")
+    if (!isNaN(keyword)) {
+      query.price = parseFloat(keyword);
+    } else {
+      // Perform regular search on name, brand, and category fields
       const keywords = keyword.split(" ");
       const keywordRegex = keywords.map((kw) => new RegExp(kw, "i"));
       query.$or = [
@@ -97,7 +100,11 @@ const search = async (req, res, next) => {
 
     const products = await Product.find(query);
 
-    res.status(200).json({ success: true, products });
+    if (products.length === 0) {
+      res.status(404).json({ success: false, message: "No products found" });
+    } else {
+      res.status(200).json({ success: true, products });
+    }
   } catch (error) {
     next(error);
   }
