@@ -7,10 +7,11 @@ const {
   getProductsByPrice,
   search,
 } = require("../controllers/productController");
+const { isAuthenticatedUser } = require("../middleware/auth");
 const router = express.Router();
 
 //CUSTOMER ROUTES
-router.get("/products", getAllProducts); // get all products route
+router.get("/products", isAuthenticatedUser, getAllProducts); // get all products route
 router.get("/products/gender/:gender", getProductsByGender); // get products by gender
 router.get("/products/brand/:brand", getProductsByBrand); // get products by brand
 router.get("/products/category/:category", getProductsByCategory); // get products by category
