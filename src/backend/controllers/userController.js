@@ -180,6 +180,8 @@ const updateUserProfile = async (req, res, next) => {
 };
 
 // make admin routes
+
+// make function for adding review
 module.exports = {
   registerUser,
   loginUser,
