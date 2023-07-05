@@ -1,4 +1,5 @@
 const express = require("express");
+const router = express.Router();
 const {
   getAllProducts,
   getProductsByGender,
@@ -8,7 +9,6 @@ const {
   search,
 } = require("../controllers/productController");
 const { isAuthenticatedUser } = require("../middleware/auth");
-const router = express.Router();
 
 //CUSTOMER ROUTES
 router.get("/products", isAuthenticatedUser, getAllProducts); // get all products route
