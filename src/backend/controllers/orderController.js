@@ -53,7 +53,7 @@ const myOrders = async (req, res, next) => {
   if (orders.length === 0) {
     res.status(200).json({
       success: true,
-      message: "No orders found",
+      message: "No orders placed",
     });
   } else {
     res.status(200).json({
