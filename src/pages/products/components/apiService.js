@@ -9,7 +9,7 @@ export const getAllProducts = async () => {
     const response = await apiService.get("/products");
     return response.data.products;
   } catch (error) {
-    console.error("Error fetching product data:", error);
+    console.error("Error fetching product data:", error.message);
     throw error;
   }
 };

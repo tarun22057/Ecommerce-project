@@ -1,5 +1,10 @@
 import React from "react";
 import axios from "axios";
+import Main from "./components/Main";
 export const Products = () => {
-  return <div>Product listing page</div>;
+  return (
+    <div>
+      <Main />
+    </div>
+  );
 };
